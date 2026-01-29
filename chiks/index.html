@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Chat & Style</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h2 style="margin: 0; color: #ff5fa2;" id="logo">chicks chat</h2>
+        <button id="themeBtn">Сменить тему</button>
+    </div>
+
+    <div class="chat-window" id="chatWindow">
+        <div class="message bot">Привет! Я твой помощник. Напиши "нарисуй ...", чтобы создать картинку!</div>
+    </div>
+
+    <form id="inputForm" class="input-area">
+        <input type="text" id="userInput" placeholder="Напиши что-нибудь...">
+        <button type="submit">Отправить</button>
+    </form>
+
+    <div class="image-result">
+        <img id="imageOutput" src="" alt="" style="max-width: 100%; border-radius: 15px; margin-top: 10px;">
+    </div>
+
+    <hr style="margin: 30px 0; border: 1px solid #ffb6d6; opacity: 0.3;">
+
+    <div class="survey">
+        <h3>Твой стиль и вайб</h3>
+        
+        <div class="progress-wrapper">
+            <div id="progressBar"></div>
+        </div>
+
+        <form id="vibeForm">
+    <div class="question-step" data-step="1">
+        <p>1. Какой вайб тебе ближе?</p>
+        <div class="options-container">
+            <label><input type="radio" name="vibe1" value="light"> Нежный</label>
+            <label><input type="radio" name="vibe1" value="dark"> Тёмный</label>
+            <label><input type="radio" name="vibe1" value="minimal"> Минимал</label>
+            <label><input type="radio" name="vibe1" value="chaos"> Хаос</label>
+        </div>
+    </div>
+
+    <div class="question-step" data-step="2" style="display: none;">
+        <p>2. Если бы твой стиль был эмоцией?</p>
+        <div class="options-container">
+            <label><input type="radio" name="vibe2" value="calm"> Спокойствие</label>
+            <label><input type="radio" name="vibe2" value="power"> Сила</label>
+            <label><input type="radio" name="vibe2" value="mystery"> Загадка</label>
+            <label><input type="radio" name="vibe2" value="passion"> Страсть</label>
+        </div>
+    </div>
+
+    <div class="question-step" data-step="3" style="display: none;">
+        <p>3. Какие цвета притягивают больше?</p>
+        <div class="options-container">
+            <label><input type="radio" name="vibe3" value="pastel"> Пастель</label>
+            <label><input type="radio" name="vibe3" value="black"> Чёрный</label>
+            <label><input type="radio" name="vibe3" value="contrast"> Контраст</label>
+            <label><input type="radio" name="vibe3" value="bright"> Яркие</label>
+        </div>
+    </div>
+
+    <div class="question-step" data-step="4" style="display: none;">
+        <p>4. Что важнее в одежде?</p>
+        <div class="options-container">
+            <label><input type="radio" name="vibe4" value="comfort"> Комфорррт</label>
+            <label><input type="radio" name="vibe4" value="look"> Визуал</label>
+            <label><input type="radio" name="vibe4" value="meaning"> Смысл</label>
+            <label><input type="radio" name="vibe4" value="status"> Статус</label>
+        </div>
+    </div>
+
+    <div class="question-step" data-step="5" style="display: none;">
+        <p>5. Твой стиль скорее:</p>
+        <div class="options-container">
+            <label><input type="radio" name="vibe5" value="neat"> Аккуратный</label>
+            <label><input type="radio" name="vibe5" value="soft"> Воздушный</label>
+            <label><input type="radio" name="vibe5" value="bold"> Дерзкий</label>
+            <label><input type="radio" name="vibe5" value="classic"> Классика</label>
+        </div>
+    </div>
+
+    <div class="question-step" data-step="6" style="display: none;">
+        <p>6. Любимый аксессуар?</p>
+        <div class="options-container">
+            <label><input type="radio" name="vibe6" value="jewelry"> Цепи/Кольца</label>
+            <label><input type="radio" name="vibe6" value="hats"> Кепки/Шапки</label>
+            <label><input type="radio" name="vibe6" value="glasses"> Очки</label>
+            <label><input type="radio" name="vibe6" value="none"> Ничего</label>
+        </div>
+    </div>
+
+    <div class="question-step" data-step="7" style="display: none;">
+        <p>7. На ногах обычно:</p>
+        <div class="options-container">
+            <label><input type="radio" name="vibe7" value="sneakers"> Кроссовки</label>
+            <label><input type="radio" name="vibe7" value="boots"> Ботинки</label>
+            <label><input type="radio" name="vibe7" value="heels"> Каблуки</label>
+            <label><input type="radio" name="vibe7" value="slippers"> Удобные тапки</label>
+        </div>
+    </div>
+
+
+
+            <button type="submit" id="submitBtn" style="display: none; width: 100%; margin-top: 20px;">Узнать результат</button>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Твой вайб — Результат</title>
+    <link rel="stylesheet" href="style.css"> <style>
+        .result-card {
+            background: white;
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+            margin: 40px auto;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        .result-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            border: 5px solid #fff5fa;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .vibe-title {
+            font-size: 28px;
+            color: #ff5fa2;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .vibe-desc {
+            line-height: 1.6;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            background: #ff5fa2;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover { background: #ff2a85; transform: scale(1.05); }
+    </style>
+</head>
+<body>
+
+<div class="result-card">
+    <img id="vibeImage" class="result-image" src="" alt="Vibe Image">
+    
+    <div id="resultContent">
+        <span id="vibeTitle" class="vibe-title"></span>
+        <p id="resultText" class="vibe-desc"></p>
+    </div>
+
+    <button class="back-btn" onclick="window.location.href='index.html'">Пройти еще раз</button>
+    <button id="themeBtn" class="back-btn" style="background: #333; margin-left: 10px;">Тема</button>
+</div>
+
+<script>
+    const result = localStorage.getItem('vibeResult');
+    const title = document.getElementById('vibeTitle');
+    const text = document.getElementById('resultText');
+    const img = document.getElementById('vibeImage');
+
+    // Массивы с темами для картинок (чтобы всегда были разные)
+    const darkImages = ['dark-aesthetic', 'gothic-fashion', 'night-city', 'minimal-black'];
+    const softImages = ['soft-aesthetic', 'pastel-flowers', 'dreamy-clouds', 'cozy-style'];
+
+    const getRandomImg = (tags) => {
+        const tag = tags[Math.floor(Math.random() * tags.length)];
+        const seed = Math.floor(Math.random() * 1000);
+        return `https://image.pollinations.ai/prompt/${tag}?seed=${seed}&width=500&height=500&nologo=true`;
+    };
+
+    if (result === 'dark') {
+        title.innerText = "Тёмный вайб";
+        text.innerHTML = "Ты глубокая, сильная и собранная. В твоём стиле есть контроль, уверенность и характер. Ты не играешь на публику — ты настоящая.";
+        img.src = getRandomImg(darkImages);
+    } else {
+        title.innerText = "Мягкий вайб";
+        text.innerHTML = "Ты эстетика, чувство и спокойствие. В твоём стиле много воздуха и настроения. С тобой легко и тепло.";
+        img.src = getRandomImg(softImages);
+    }
+
+    // Логика темы
+    const btn = document.getElementById('themeBtn');
+    if(localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');
+
+    btn.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+    });
+</script>
+
+</body>
+</html>

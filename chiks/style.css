@@ -1,0 +1,102 @@
+/* --- БАЗОВЫЕ НАСТРОЙКИ --- */
+* { box-sizing: border-box; }
+body {
+    margin: 0; font-family: 'Segoe UI', sans-serif;
+    background: #ffd6e8; color: #333;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 20px; min-height: 100vh; transition: 0.4s;
+}
+
+.app {
+    max-width: 600px; width: 100%; background: white;
+    padding: 30px; border-radius: 30px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+/* --- ЧАТ И ВВОД --- */
+.chat-window {
+    height: 200px; overflow-y: auto; background: #f9f9f9;
+    padding: 15px; border-radius: 20px; border: 1px solid #eee; margin-bottom: 20px;
+}
+.input-area { display: flex; gap: 10px; margin-bottom: 20px; }
+.input-area input { flex: 1; padding: 12px 20px; border-radius: 50px; border: 1px solid #ddd; outline: none; }
+button { padding: 12px 20px; border-radius: 50px; border: none; cursor: pointer; font-weight: bold; background: #eee; transition: 0.3s; }
+
+/* --- ОПРОС (СЕТКА КАК НА СКРИНЕ) --- */
+.options-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 колонки */
+    gap: 12px; margin-top: 15px;
+}
+
+.options-container label {
+    display: flex; align-items: center;
+    background: #fff5fa; padding: 15px;
+    border-radius: 20px; border: 2px solid transparent;
+    cursor: pointer; transition: 0.3s;
+}
+
+/* Кастомные радио-кнопки (большие) */
+.options-container input[type="radio"] {
+    appearance: none; -webkit-appearance: none;
+    width: 24px; height: 24px; border: 2px solid #ff5fa2;
+    border-radius: 50%; margin-right: 12px;
+    position: relative; background: white; flex-shrink: 0;
+}
+
+.options-container input[type="radio"]:checked::before {
+    content: ""; width: 12px; height: 12px; background: #ff5fa2;
+    border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+}
+
+.options-container label:has(input:checked) {
+    border-color: #ff5fa2; background: #ffeef6;
+}
+/* --- ПРОГРЕСС-БАР --- */
+.progress-wrapper {
+    background: #eee;
+    border-radius: 10px;
+    height: 10px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    width: 100%;
+    border: 1px solid #fff;
+}
+
+#progressBar {
+    background: #ff5fa2;
+    width: 0%; /* Начальное состояние */
+    height: 100%;
+    transition: width 0.4s ease-out; /* Анимация движения */
+}
+
+/* Линия в темной теме */
+body.dark .progress-wrapper {
+    background: #12131a;
+    border-color: #4f5fa8;
+}
+
+body.dark #progressBar {
+    background: #4f5fa8;
+    box-shadow: 0 0 10px #4f5fa8;
+}
+/* --- ТЕМНАЯ ТЕМА (BOY / NEON) --- */
+body.dark { background: radial-gradient(circle at top, #1f2333 0%, #12131a 70%); color: #fff; }
+
+body.dark .app {
+    background: #1c1f2e !important; border: 2px solid #4f5fa8;
+    box-shadow: 0 0 20px rgba(79, 95, 168, 0.5), inset 0 0 15px rgba(79, 95, 168, 0.2) !important;
+}
+
+body.dark .chat-window, body.dark input { background: #12131a !important; border-color: #4f5fa8 !important; color: #fff; }
+
+body.dark .options-container label { background: #2c2f4a; color: #fff; }
+
+body.dark .options-container input[type="radio"] { border-color: #4f5fa8; background: #12131a; }
+
+body.dark .options-container input[type="radio"]:checked::before { background: #9bbcff; box-shadow: 0 0 10px #9bbcff; }
+
+body.dark .options-container label:has(input:checked) { border-color: #4f5fa8; background: rgba(79, 95, 168, 0.2); }
+
+body.dark button { background: #4f5fa8; color: white; }
