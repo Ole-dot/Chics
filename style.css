@@ -1,0 +1,286 @@
+/* ===== RESET ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* ===== ТЕМЫ ===== */
+
+/* 🌸 GIRL */
+body.theme-girl {
+    background: radial-gradient(circle at top, #ffd6e8 0%, #fff 70%);
+    color: #222;
+}
+
+body.theme-girl .top {
+    background: #ff5fa2;
+}
+
+body.theme-girl .container {
+    background: #ffffff;
+}
+
+/* 👨 BOY */
+body.theme-boy {
+    background: radial-gradient(circle at top, #1f2333 0%, #12131a 70%);
+    color: #f0f0f0;
+}
+
+body.theme-boy .top {
+    background: #2c2f4a;
+}
+
+body.theme-boy .container {
+    background: #1c1f2e;
+}
+
+body.theme-boy .info label {
+    color: #9bbcff;
+}
+
+body.theme-boy .info input {
+    background: #12131a;
+    color: #fff;
+    border-color: #4f5fa8;
+}
+
+body.theme-boy .upload-btn {
+    background: #4f5fa8;
+}
+
+body.theme-boy .upload-btn:hover {
+    background: #3e4b8f;
+}
+
+/* ===== HEADER ===== */
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.steps span {
+    background: rgba(255,255,255,0.6);
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin: 0 5px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* переключатель темы */
+.theme-switch {
+    display: flex;
+    gap: 6px;
+    margin-right: 10px;
+}
+
+.theme-switch button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: rgba(255,255,255,0.4);
+    font-size: 16px;
+}
+
+.theme-switch button:hover {
+    background: rgba(255,255,255,0.7);
+}
+
+.avatar-icon {
+  width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #fff;
+}
+body.theme-girl .avatar-icon {
+    border-color: #ff5fa2;
+}
+
+body.theme-boy .avatar-icon {
+    border-color: #4f5fa8;
+}
+
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+/* ===== PROFILE SECTION ===== */
+.profile-section {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 60px;
+    align-items: start;
+    margin-bottom: 40px;
+    background: rgba(255,255,255,0.6);
+    padding: 30px;
+    border-radius: 26px;
+}
+
+/* ===== AVATAR (ТОЧНО КАК КАРТОЧКА, НО БОЛЬШЕ) ===== */
+.avatar-item {
+    text-align: center;
+}
+
+.avatar-item img {
+    width: 260px;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 3px solid #ff5fa2;
+    background: #fff0f6;
+    padding: 10px;
+    box-shadow: 0 10px 25px rgba(134, 74, 100, 0.35);
+}
+
+.avatar-item img:not([src]),
+.avatar-item img[src=""] {
+    background: #fff0f6;
+}
+
+/* ===== INFO ===== */
+.info {
+    display: grid;
+    gap: 18px;
+}
+
+.info label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.info input {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 18px;
+    border: 1.5px solid #ff5fa2;
+    font-size: 14px;
+    outline: none;
+    background: #fff;
+}
+
+.info input::placeholder {
+    color: #d9a0b8;
+}
+
+.info input:focus {
+    box-shadow: 0 0 0 3px rgba(255, 95, 162, 0.25);
+}
+
+/* ===== WARDROBE ===== */
+.wardrobe-title {
+    text-align: center;
+    margin: 40px 0 20px;
+}
+
+.wardrobe {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+}
+
+.item {
+    text-align: center;
+}
+
+.item img {
+    width: 160px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 3px solid #ff5fa2;
+    background: #fff0f6;
+    padding: 10px;
+    box-shadow: 0 10px 25px rgba(255, 111, 174, 0.35);
+}
+
+/* ===== FILE INPUT ===== */
+input[type="file"] {
+    position: absolute;
+    left: -9999px;
+}
+
+/* ===== BUTTON ===== */
+.upload-btn {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 18px;
+    background: #ff5fa2;
+    color: white;
+    border-radius: 14px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+    box-shadow: 0 8px 20px rgba(255, 111, 174, 0.35);
+}
+
+.upload-btn:hover {
+    transform: translateY(-2px);
+}
+/* === АВАТАР: ФИНАЛЬНЫЙ РАЗМЕР === */
+.avatar-item img {
+    width: 320px;
+    height: 440px;
+    padding: 14px;
+    border: 3px solid #ff5fa2;
+    border-radius: 22px;
+    box-shadow: 0 14px 35px rgba(255, 95, 162, 0.4);
+}
+/* ===== BOY THEME — УБИРАЕМ ВСЁ РОЗОВОЕ ===== */
+
+body.theme-boy .profile-section {
+    background: rgba(30, 33, 50, 0.9);
+}
+
+body.theme-boy .item img,
+body.theme-boy .avatar-item img {
+    border-color: #4f5fa8;
+    background: #1e2235;
+    box-shadow: 0 10px 25px rgba(79, 95, 168, 0.35);
+}
+
+body.theme-boy .steps span {
+    background: rgba(155, 188, 255, 0.2);
+}
+
+body.theme-boy .wardrobe-title {
+    color: #9bbcff;
+}
+body.theme-girl .wardrobe-title {
+    color: #ff5fa2;
+}
+
+
+body.theme-boy .upload-btn {
+    background: #4f5fa8;
+    box-shadow: 0 8px 20px rgba(79, 95, 168, 0.35);
+}
+
+body.theme-boy .upload-btn:hover {
+    background: #3e4b8f;
+}
+
+body.theme-boy .info input::placeholder {
+    color: #9aa3d6;
+}
+/* === АВАТАР В ШАПКЕ — ФИНАЛЬНО === */

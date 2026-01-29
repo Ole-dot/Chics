@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>CHIKS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- по умолчанию пусть будет girl -->
+<body class="theme-girl">
+
+<header class="top">
+    <div class="steps">
+        <span>Аватар</span> ➜
+        <span>colortype</span> ➜
+        <span>магазин</span>
+    </div>
+
+    <!-- правая часть шапки -->
+    <div class="profile">
+
+        <!-- ПЕРЕКЛЮЧЕНИЕ ТЕМ -->
+        <div class="theme-switch">
+            <button onclick="setTheme('girl')" title="Girl">👩</button>
+            <button onclick="setTheme('boy')" title="Boy">👨</button>
+        </div>
+
+        <span>My</span>
+        <img id="headerAvatar" class="avatar-icon">
+    </div>
+</header>
+
+    </div>
+</header>
+
+<main class="container">
+
+    <!-- ПРОФИЛЬ -->
+    <div class="profile-section">
+
+        <!-- АВАТАР -->
+        <div class="item avatar-item">
+            <img id="avatarPreview">
+            <input type="file" id="avatarFile" accept="image/*"
+                   onchange="loadImage(event, 'avatarPreview')">
+            <label for="avatarFile" class="upload-btn">Загрузить фото</label>
+        </div>
+
+        <!-- ПОЛЯ -->
+        <div class="info">
+            <label>Имя:
+                <input type="text" placeholder="Введите имя">
+            </label>
+
+            <label>Цветотип:
+                <input type="text" placeholder="например: осень">
+            </label>
+
+            <label>Фигура:
+                <input type="text" placeholder="например: груша">
+            </label>
+
+            <label>Поиск:
+                <input type="text" placeholder="Напишите предпочтения">
+            </label>
+        </div>
+
+    </div>
+
+    <!-- ГАРДЕРОБ -->
+    <h2 class="wardrobe-title">Твой гардероб</h2>
+
+    <div class="wardrobe">
+
+        <div class="item pink-frame">
+            <img id="item1">
+            <input type="file" id="file1" accept="image/*" onchange="loadImage(event, 'item1')">
+            <label for="file1" class="upload-btn">Загрузить фото</label>
+        </div>
+
+        <div class="item pink-frame">
+            <img id="item2">
+            <input type="file" id="file2" accept="image/*" onchange="loadImage(event, 'item2')">
+            <label for="file2" class="upload-btn">Загрузить фото</label>
+        </div>
+
+        <div class="item pink-frame">
+            <img id="item3">
+            <input type="file" id="file3" accept="image/*" onchange="loadImage(event, 'item3')">
+            <label for="file3" class="upload-btn">Загрузить фото</label>
+        </div>
+
+        <div class="item pink-frame">
+            <img id="item4">
+            <input type="file" id="file4" accept="image/*" onchange="loadImage(event, 'item4')">
+            <label for="file4" class="upload-btn">Загрузить фото</label>
+        </div>
+
+        <div class="item pink-frame">
+            <img id="item5">
+            <input type="file" id="file5" accept="image/*" onchange="loadImage(event, 'item5')">
+            <label for="file5" class="upload-btn">Загрузить фото</label>
+        </div>
+
+        <div class="item pink-frame">
+            <img id="item6">
+            <input type="file" id="file6" accept="image/*" onchange="loadImage(event, 'item6')">
+            <label for="file6" class="upload-btn">Загрузить фото</label>
+        </div>
+
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
