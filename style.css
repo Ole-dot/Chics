@@ -1,4 +1,4 @@
-/* ===== RESET ===== */
+
 * {
     box-sizing: border-box;
 }
@@ -9,9 +9,9 @@ body {
     transition: background 0.3s, color 0.3s;
 }
 
-/* ===== ТЕМЫ ===== */
 
-/* 🌸 GIRL */
+
+
 body.theme-girl {
     background: radial-gradient(circle at top, #ffd6e8 0%, #fff 70%);
     color: #222;
@@ -25,7 +25,7 @@ body.theme-girl .container {
     background: #ffffff;
 }
 
-/* 👨 BOY */
+
 body.theme-boy {
     background: radial-gradient(circle at top, #1f2333 0%, #12131a 70%);
     color: #f0f0f0;
@@ -57,7 +57,7 @@ body.theme-boy .upload-btn:hover {
     background: #3e4b8f;
 }
 
-/* ===== HEADER ===== */
+
 .top {
     display: flex;
     justify-content: space-between;
@@ -78,7 +78,7 @@ body.theme-boy .upload-btn:hover {
     gap: 10px;
 }
 
-/* переключатель темы */
+
 .theme-switch {
     display: flex;
     gap: 6px;
@@ -115,7 +115,7 @@ body.theme-boy .avatar-icon {
 }
 
 
-/* ===== CONTAINER ===== */
+
 .container {
     max-width: 1000px;
     margin: 30px auto;
@@ -123,7 +123,7 @@ body.theme-boy .avatar-icon {
     border-radius: 20px;
 }
 
-/* ===== PROFILE SECTION ===== */
+
 .profile-section {
     display: grid;
     grid-template-columns: 320px 1fr;
@@ -135,7 +135,7 @@ body.theme-boy .avatar-icon {
     border-radius: 26px;
 }
 
-/* ===== AVATAR (ТОЧНО КАК КАРТОЧКА, НО БОЛЬШЕ) ===== */
+
 .avatar-item {
     text-align: center;
 }
@@ -156,7 +156,7 @@ body.theme-boy .avatar-icon {
     background: #fff0f6;
 }
 
-/* ===== INFO ===== */
+
 .info {
     display: grid;
     gap: 18px;
@@ -185,7 +185,7 @@ body.theme-boy .avatar-icon {
     box-shadow: 0 0 0 3px rgba(255, 95, 162, 0.25);
 }
 
-/* ===== WARDROBE ===== */
+
 .wardrobe-title {
     text-align: center;
     margin: 40px 0 20px;
@@ -213,13 +213,13 @@ body.theme-boy .avatar-icon {
     box-shadow: 0 10px 25px rgba(255, 111, 174, 0.35);
 }
 
-/* ===== FILE INPUT ===== */
+
 input[type="file"] {
     position: absolute;
     left: -9999px;
 }
 
-/* ===== BUTTON ===== */
+
 .upload-btn {
     display: inline-block;
     margin-top: 14px;
@@ -237,7 +237,7 @@ input[type="file"] {
 .upload-btn:hover {
     transform: translateY(-2px);
 }
-/* === АВАТАР: ФИНАЛЬНЫЙ РАЗМЕР === */
+
 .avatar-item img {
     width: 320px;
     height: 440px;
@@ -246,7 +246,7 @@ input[type="file"] {
     border-radius: 22px;
     box-shadow: 0 14px 35px rgba(255, 95, 162, 0.4);
 }
-/* ===== BOY THEME — УБИРАЕМ ВСЁ РОЗОВОЕ ===== */
+
 
 body.theme-boy .profile-section {
     background: rgba(30, 33, 50, 0.9);
@@ -283,4 +283,5 @@ body.theme-boy .upload-btn:hover {
 body.theme-boy .info input::placeholder {
     color: #9aa3d6;
 }
-/* === АВАТАР В ШАПКЕ — ФИНАЛЬНО === */
+
+
