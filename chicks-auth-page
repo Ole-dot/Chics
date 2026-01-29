@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Chicks — Вход и регистрация</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #fde6ee, #ffffff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: #ffffff;
+    width: 360px;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(255, 105, 180, 0.25);
+    text-align: center;
+}
+
+h1 {
+    color: #ff5fa2;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #b46a88;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 14px;
+    border: 1px solid #f3b6cd;
+    font-size: 14px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #ff5fa2;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 18px;
+    border: none;
+    background: linear-gradient(90deg, #ff5fa2, #ff87b7);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.switch {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #b46a88;
+}
+
+.switch span {
+    color: #ff5fa2;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.hidden {
+    display: none;
+}
+
+.success {
+    color: #ff5fa2;
+    margin-top: 10px;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Chicks</h1>
+    <div class="subtitle">Стиль, который говорит о тебе 💗</div>
+
+    <!-- Регистрация -->
+    <div id="register">
+        <input id="r-name" type="text" placeholder="Имя">
+        <input id="r-email" type="email" placeholder="Email">
+        <input id="r-pass" type="password" placeholder="Пароль">
+        <button onclick="register()">Регистрация</button>
+        <div class="switch">
+            Уже есть аккаунт? <span onclick="showLogin()">Войти</span>
+        </div>
+    </div>
+
+    <!-- Вход -->
+    <div id="login" class="hidden">
+        <input id="l-email" type="email" placeholder="Email">
+        <input id="l-pass" type="password" placeholder="Пароль">
+        <button onclick="login()">Войти</button>
+        <div class="switch">
+            Нет аккаунта? <span onclick="showRegister()">Регистрация</span>
+        </div>
+    </div>
+
+    <div id="msg" class="success"></div>
+</div>
+
+<script>
+function showLogin() {
+    document.getElementById("register").classList.add("hidden");
+    document.getElementById("login").classList.remove("hidden");
+    document.getElementById("msg").innerText = "";
+}
+
+function showRegister() {
+    document.getElementById("login").classList.add("hidden");
+    document.getElementById("register").classList.remove("hidden");
+    document.getElementById("msg").innerText = "";
+}
+
+function register() {
+    let name = document.getElementById("r-name").value;
+    let email = document.getElementById("r-email").value;
+    let pass = document.getElementById("r-pass").value;
+
+    if (name === "" || email === "" || pass === "") {
+        alert("Пожалуйста, заполните все поля");
+        return;
+    }
+
+    document.getElementById("msg").innerText = "Регистрация прошла успешно 💗";
+    showLogin();
+}
+
+function login() {
+    let email = document.getElementById("l-email").value;
+    let pass = document.getElementById("l-pass").value;
+
+    if (email === "" || pass === "") {
+        alert("Введите email и пароль");
+        return;
+    }
+
+    document.getElementById("msg").innerText = "Добро пожаловать ✨";
+}
+</script>
+
+</body>
+</html>
