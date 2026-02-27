@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Chicks — Главная</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="theme-girl">
+<div class="page-wrapper">
+    <header id="site-header"></header>
+
+    <header class="top">
+        <div class="steps">
+            <a href="#avatar-block"><span>Аватар</span></a> ➜
+            <a href="#colortype"><span>colortype</span></a> ➜
+            <span>магазин</span>
+        </div>
+        <div class="profile">
+            <div class="theme-switch">
+                <button onclick="setTheme('girl')" title="Girl">👩</button>
+                <button onclick="setTheme('boy')" title="Boy">👨</button>
+            </div>
+            <span>My</span>
+            <img id="headerAvatar" class="avatar-icon">
+        </div>
+    </header>
+
+    <main class="container">
+    <section class="profile-section" id="avatar-block">
+        <div class="item avatar-item">
+            <img id="avatarPreview">
+            <input type="file" id="avatarFile" accept="image/*"
+                   onchange="loadImage(event, 'avatarPreview')">
+            <label for="avatarFile" class="upload-btn">Загрузить фото</label>
+        </div>
+
+      
+        <div class="info">
+            <label>Имя:
+                <input type="text" placeholder="Введите имя">
+            </label>
+
+            <label>Цветотип:
+                <input type="text" placeholder="например: осень">
+            </label>
+
+            <label>Фигура:
+                <input type="text" placeholder="например: груша">
+            </label>
+
+            <label>Поиск:
+                <input type="text" placeholder="Напишите предпочтения">
+            </label>
+        </div>
+    </section>
+
+    <!-- Тест: цветотип и стиль -->
+    <section class="quiz-section" id="colortype">
+        <h2 class="section-title">Твой стиль и вайб</h2>
+        <p class="section-subtitle">Узнай свой тип и подбери образы по душе</p>
+
+        <div id="quiz-steps">
+            <div class="quiz-progress">
+                <div class="quiz-progress-bar" id="quiz-progress-bar"></div>
+            </div>
+
+            <div class="quiz-step" data-step="1">
+                <p class="quiz-question">1. Какой вайб тебе ближе?</p>
+                <div class="quiz-options">
+                    <label class="quiz-option"><input type="radio" name="vibe" value="soft"> <span>Нежный</span></label>
+                    <label class="quiz-option"><input type="radio" name="vibe" value="dark"> <span>Тёмный</span></label>
+                    <label class="quiz-option"><input type="radio" name="vibe" value="minimal"> <span>Минимал</span></label>
+                    <label class="quiz-option"><input type="radio" name="vibe" value="chaos"> <span>Хаос</span></label>
+                </div>
+            </div>
+
+            <div class="quiz-step" data-step="2">
+                <p class="quiz-question">2. Где тебе комфортнее?</p>
+                <div class="quiz-options">
+                    <label class="quiz-option"><input type="radio" name="place" value="home"> <span>Дома уютно</span></label>
+                    <label class="quiz-option"><input type="radio" name="place" value="city"> <span>В городе</span></label>
+                    <label class="quiz-option"><input type="radio" name="place" value="nature"> <span>На природе</span></label>
+                    <label class="quiz-option"><input type="radio" name="place" value="party"> <span>На вечеринке</span></label>
+                </div>
+            </div>
+
+            <div class="quiz-step" data-step="3">
+                <p class="quiz-question">3. Твой стиль скорее:</p>
+                <div class="quiz-options">
+                    <label class="quiz-option"><input type="radio" name="style" value="neat"> <span>Аккуратный</span></label>
+                    <label class="quiz-option"><input type="radio" name="style" value="airy"> <span>Воздушный</span></label>
+                    <label class="quiz-option"><input type="radio" name="style" value="bold"> <span>Дерзкий</span></label>
+                    <label class="quiz-option"><input type="radio" name="style" value="classic"> <span>Классика</span></label>
+                </div>
+            </div>
+
+            <div class="quiz-step" data-step="4">
+                <p class="quiz-question">4. Любимая палитра?</p>
+                <div class="quiz-options">
+                    <label class="quiz-option"><input type="radio" name="palette" value="pastel"> <span>Пастель</span></label>
+                    <label class="quiz-option"><input type="radio" name="palette" value="bright"> <span>Яркие цвета</span></label>
+                    <label class="quiz-option"><input type="radio" name="palette" value="neutral"> <span>Нейтральные</span></label>
+                    <label class="quiz-option"><input type="radio" name="palette" value="dark"> <span>Тёмные</span></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-actions">
+            <button type="button" class="btn-pink" id="quiz-prev" style="display:none;">Назад</button>
+            <button type="button" class="btn-pink" id="quiz-next">Далее</button>
+            <button type="button" class="btn-pink" id="quiz-finish" style="display:none;">Узнать результат</button>
+        </div>
+
+        <div class="quiz-result" id="quiz-result">
+            <h3 class="vibe-image-title">Vibe Image</h3>
+            <div class="vibe-image-box">
+                <img id="vibe-result-img" src="" alt="">
+            </div>
+            <h2 class="vibe-result-title" id="vibe-result-title">Мягкий вайб</h2>
+            <p class="vibe-result-desc" id="vibe-result-desc"></p>
+            <div class="vibe-result-actions">
+                <button type="button" class="btn-pink" id="quiz-retry">Пройти ещё раз</button>
+                <button type="button" class="btn-outline" onclick="setTheme(document.body.classList.contains('theme-boy') ? 'girl' : 'boy')">Сменить тему</button>
+            </div>
+        </div>
+    </section>
+
+    <h2 class="wardrobe-title" id="wardrobe">Твой гардероб</h2>
+
+    <div class="wardrobe">
+        <div class="item pink-frame">
+            <img id="item1" src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&q=80" alt="Одежда">
+            <input type="file" id="file1" accept="image/*" onchange="loadImage(event, 'item1')">
+            <label for="file1" class="upload-btn">Загрузить фото</label>
+        </div>
+        <div class="item pink-frame">
+            <img id="item2" src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=400&q=80" alt="Одежда">
+            <input type="file" id="file2" accept="image/*" onchange="loadImage(event, 'item2')">
+            <label for="file2" class="upload-btn">Загрузить фото</label>
+        </div>
+        <div class="item pink-frame">
+            <img id="item3" src="https://images.unsplash.com/photo-1595776613215-fe04b78de7d0?w=400&q=80" alt="Одежда">
+            <input type="file" id="file3" accept="image/*" onchange="loadImage(event, 'item3')">
+            <label for="file3" class="upload-btn">Загрузить фото</label>
+        </div>
+        <div class="item pink-frame">
+            <img id="item4" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&q=80" alt="Одежда">
+            <input type="file" id="file4" accept="image/*" onchange="loadImage(event, 'item4')">
+            <label for="file4" class="upload-btn">Загрузить фото</label>
+        </div>
+        <div class="item pink-frame">
+            <img id="item5" src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=400&q=80" alt="Одежда">
+            <input type="file" id="file5" accept="image/*" onchange="loadImage(event, 'item5')">
+            <label for="file5" class="upload-btn">Загрузить фото</label>
+        </div>
+        <div class="item pink-frame">
+            <img id="item6" src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&q=80" alt="Одежда">
+            <input type="file" id="file6" accept="image/*" onchange="loadImage(event, 'item6')">
+            <label for="file6" class="upload-btn">Загрузить фото</label>
+        </div>
+    </div>
+
+</main>
+
+    <footer id="site-footer"></footer>
+</div>
+
+<script src="common.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
