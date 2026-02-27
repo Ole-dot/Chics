@@ -1,0 +1,142 @@
+/* Chat page — pretty pink, same vibe as the rest */
+* {
+    box-sizing: border-box;
+}
+
+.chat-page {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 20px;
+    min-height: 60vh;
+}
+
+.chat-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 560px;
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(255, 105, 180, 0.2);
+    border-top: 4px solid #ff87b7;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid rgba(255, 182, 193, 0.35);
+}
+
+.chat-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ff5fa2;
+    letter-spacing: -0.02em;
+}
+
+.btn-theme {
+    padding: 10px 18px;
+    border-radius: 14px;
+    border: 1px solid #e8d0d9;
+    background: #fdf5f8;
+    color: #6b4a5a;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.btn-theme:hover {
+    background: #fce8ef;
+    border-color: #f3b6cd;
+}
+
+.chat-messages {
+    flex: 1;
+    min-height: 280px;
+    padding: 20px 24px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.message {
+    max-width: 85%;
+    padding: 14px 18px;
+    border-radius: 18px;
+    font-size: 0.95rem;
+    line-height: 1.45;
+}
+
+.message-assistant {
+    align-self: flex-start;
+    background: #f5f0f2;
+    color: #3d2c35;
+    border: 1px solid rgba(243, 182, 205, 0.4);
+}
+
+.message-user {
+    align-self: flex-end;
+    background: linear-gradient(135deg, #ff5fa2 0%, #ff87b7 100%);
+    color: #fff;
+}
+
+.message p {
+    margin: 0;
+}
+
+.chat-input-row {
+    display: flex;
+    gap: 12px;
+    padding: 20px 24px;
+    border-top: 1px solid rgba(255, 182, 193, 0.3);
+    background: #fefbfc;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 14px 18px;
+    border-radius: 18px;
+    border: 1px solid #e8d0d9;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.chat-input:focus {
+    border-color: #ff5fa2;
+}
+
+.chat-input::placeholder {
+    color: #b46a88;
+    opacity: 0.8;
+}
+
+.btn-send {
+    padding: 14px 24px;
+    border-radius: 18px;
+    border: 1px solid #e8d0d9;
+    background: #fdf5f8;
+    color: #6b4a5a;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.btn-send:hover {
+    background: #fce8ef;
+    border-color: #f3b6cd;
+    color: #ff5fa2;
+}
+
+/* Optional: chat page background when using common body */
+body.theme-girl .chat-page {
+    background: transparent;
+}
