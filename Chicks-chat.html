@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Chicks — Чат</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="chicksstyle.css">
+    <link rel="stylesheet" href="chicks-chat.css">
+</head>
+<body class="theme-girl">
+<div class="page-wrapper">
+    <header id="site-header"></header>
+
+    <main class="chat-page">
+        <div class="chat-container">
+            <div class="chat-header">
+                <h1 class="chat-title">chicks chat</h1>
+                <button type="button" class="btn-theme" id="chat-theme-btn">Сменить тему</button>
+            </div>
+
+            <div class="chat-messages" id="chat-messages">
+                <div class="message message-assistant">
+                    <p>Привет! Я твой помощник. Напиши "нарисуй ...", чтобы создать картинку!</p>
+                </div>
+            </div>
+
+            <div class="chat-input-row">
+                <input type="text" id="chat-input" class="chat-input" placeholder="Напиши что-нибудь..." autocomplete="off">
+                <button type="button" class="btn-send" id="chat-send">Отправить</button>
+            </div>
+        </div>
+    </main>
+
+    <footer id="site-footer"></footer>
+</div>
+
+<script src="common.js"></script>
+<script src="chicks-chat.js"></script>
+</body>
+</html>
